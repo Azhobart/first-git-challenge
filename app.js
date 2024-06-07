@@ -7,10 +7,12 @@ const board_height = 6;
 
 cells.forEach((cell) => {
   cell.onclick = () => {
-    if (current_turn % 2 === 0) {
-      cell.classList.add("o");
-    } else {
-      cell.classList.add("x");
+    if (!cell.classList.contains("o") && !cell.classList.contains("x")) {
+      if (current_turn % 2 === 0) {
+        cell.classList.add("o");
+      } else {
+        cell.classList.add("x");
+      }
     }
 
     current_turn += 1;
